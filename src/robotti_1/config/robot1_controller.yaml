@@ -1,0 +1,26 @@
+robot1:
+   #Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 60  
+
+  # Velocity Controllers ---------------------------------------
+
+  wheel_l_velocity_controller:
+    #type: effort_controllers/JointVelocityController
+    type: velocity_controllers/JointVelocityController
+    joint: l_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  wheel_r_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: r_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  weapon_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: weapon_blade_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  
+
+#controller_joint_names: ['', 'l_wheel_joint', 'r_wheel_joint', 'weapon_blade_joint', ]

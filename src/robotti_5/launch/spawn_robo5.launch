@@ -1,0 +1,31 @@
+<launch>
+
+   <!-- Load joint controller configurations from YAML file to parameter server -->
+  <param name="robot5/robot_description" textfile="$(find robotti_5)/urdf/robotti_5.urdf" />
+  <rosparam file="$(find robotti_5)/config/robot5_controller.yaml" command="load"/>
+
+
+  <node
+    name="tf_footprint_base_r5"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <node
+    name="spawn_model_robo5"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find robotti_5)/urdf/robotti_5.urdf -urdf -robot_namespace /robot5 -model robotti_5 -x 1.0 -y 1.5 -z 0.85"
+    output="screen" />
+  <node
+    name="fake_joint_calibration_r5"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+
+  <!-- load the controllers -->
+  <node name="controller_spawner_r5" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/robot5" args="wheel_fr_velocity_controller wheel_fl_velocity_controller wheel_br_velocity_controller wheel_bl_velocity_controller joint_state_controller"/>
+
+  
+</launch>
+

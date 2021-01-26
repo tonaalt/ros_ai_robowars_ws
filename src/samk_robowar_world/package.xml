@@ -1,0 +1,43 @@
+<package format="2">
+  <name>samk_robowar_world</name>
+  <version>1.0.0</version>
+  <description>
+    <p>World package for samk robowars</p>
+    <p>This package contains arena worlds for samk robowars</p>
+  </description>
+  <author>Toni Aaltonen</author>
+  <maintainer email="toni.aaltonen@samk.fi" />
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roslaunch</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>gazebo</depend>
+  <depend>joint_state_controller</depend>
+  <depend>controller_manager</depend>
+  <build_depend>urdf</build_depend>
+  <build_export_depend>urdf</build_export_depend>
+  <exec_depend>urdf</exec_depend>
+  
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models" />
+    <gazebo_ros gazebo_media_path="${prefix}/models"/>
+  </export>
+  
+  <!--
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>urdf</build_depend>
+  <build_export_depend>urdf</build_export_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  
+  <export>
+   
+      <gazebo_ros gazebo_model_path="${prefix}/models" />
+      <gazebo_ros gazebo_media_path="${prefix}/models" />
+  </export>
+  -->
+
+</package>
