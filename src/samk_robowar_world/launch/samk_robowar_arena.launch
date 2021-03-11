@@ -1,5 +1,5 @@
 <launch>
-
+  <!-- The arena itself, with some additional arguments-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find samk_robowar_world)/world/arena.world"/>
     <arg name="gui" value="true" />
@@ -8,6 +8,7 @@
     <!-- more default parameters can be changed here -->
   </include>
 
+  <!-- including more launch files here, the robots in the arena..-->
   <include file="$(find robotti_5)/launch/spawn_robo5.launch">
   </include>
   <include file="$(find robotti_1)/launch/spawn_robo1.launch">

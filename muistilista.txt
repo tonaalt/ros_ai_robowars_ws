@@ -1,0 +1,4 @@
+11/3/2021
+
+source devel/setpu.bash
+catkin_create_pakage <pagage_name> depend1 depend2
