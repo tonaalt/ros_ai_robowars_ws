@@ -443,7 +443,7 @@
 
 			 <update_rate>60</update_rate>
 
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 
 			 <ray>
 
@@ -496,7 +496,7 @@
 
 				 <updateRate>60</updateRate>
 
-				 <topicName>/ultrasonic1</topicName>
+				 <topicName>ultrasonic1</topicName>
 
 				 <frameName>sonic1_link</frameName>
 
@@ -535,7 +535,7 @@
 
 			 <update_rate>60</update_rate>
 
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 
 			 <ray>
 
@@ -587,7 +587,7 @@
 
 				 <updateRate>60</updateRate>
 
-				 <topicName>/ultrasonic2</topicName>
+				 <topicName>ultrasonic2</topicName>
 				 <frameName>sonic2_link</frameName>
 				 <minRange>0.01</minRange>
 				 <maxRange>5</maxRange>
@@ -608,7 +608,7 @@
 		 <sensor type="ray" name="sonic3_sensor">
 			 <pose>0 0 0 0 0 0</pose>
 			 <update_rate>60</update_rate>
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 			 <ray>
 				 <scan>
 						 <horizontal>
@@ -634,7 +634,7 @@
 				 <gaussianNoise>0.005</gaussianNoise>
 				 <alwaysOn>true</alwaysOn>
 				 <updateRate>60</updateRate>
-				 <topicName>/ultrasonic3</topicName>
+				 <topicName>ultrasonic3</topicName>
 				 <frameName>sonic3_link</frameName>
 				 <minRange>0.01</minRange>
 				 <maxRange>5</maxRange>
@@ -654,7 +654,7 @@
 		 <sensor type="ray" name="sonic4_sensor">
 			 <pose>0 0 0 0 0 0</pose>
 			 <update_rate>60</update_rate>
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 			 <ray>
 				 <scan>
 						 <horizontal>
@@ -680,7 +680,7 @@
 				 <gaussianNoise>0.005</gaussianNoise>
 				 <alwaysOn>true</alwaysOn>
 				 <updateRate>60</updateRate>
-				 <topicName>/ultrasonic4</topicName>
+				 <topicName>ultrasonic4</topicName>
 				 <frameName>sonic4_link</frameName>
 				 <minRange>0.01</minRange>
 				 <maxRange>5</maxRange>
@@ -700,7 +700,7 @@
 		 <sensor type="ray" name="sonic5_sensor">
 			 <pose>0 0 0 0 0 0</pose>
 			 <update_rate>60</update_rate>
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 			 <ray>
 				 <scan>
 						 <horizontal>
@@ -726,7 +726,7 @@
 				 <gaussianNoise>0.005</gaussianNoise>
 				 <alwaysOn>true</alwaysOn>
 				 <updateRate>60</updateRate>
-				 <topicName>/ultrasonic5</topicName>
+				 <topicName>ultrasonic5</topicName>
 				 <frameName>sonic5_link</frameName>
 				 <minRange>0.01</minRange>
 				 <maxRange>5</maxRange>
@@ -747,7 +747,7 @@
 		 <sensor type="ray" name="sonic6_sensor">
 			 <pose>0 0 0 0 0 0</pose>
 			 <update_rate>60</update_rate>
-			 <visualize>false</visualize>
+			 <visualize>true</visualize>
 			 <ray>
 				 <scan>
 						 <horizontal>
@@ -774,7 +774,7 @@
 				 <gaussianNoise>0.005</gaussianNoise>
 				 <alwaysOn>true</alwaysOn>
 				 <updateRate>60</updateRate>
-				 <topicName>/ultrasonic6</topicName>
+				 <topicName>ultrasonic6</topicName>
 				 <frameName>sonic6_link</frameName>
 				 <minRange>0.01</minRange>
 				 <maxRange>5</maxRange>

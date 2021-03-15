@@ -29,4 +29,5 @@
 
   <node pkg="rostopic" type="rostopic" name="robo1_weapon_activation" args="pub /robot1/weapon_velocity_controller/command std_msgs/Float64 'data: 100.0'"/>
 
+  <node pkg="robotti_1" type="robot1_random_walk.py" name="robot1_random_walk"/>
 </launch>
