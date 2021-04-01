@@ -38,6 +38,7 @@
 
 #include <cmath>
 #include <diff_drive_controller/diff_drive_controller.h>
+#include <pluginlib/class_list_macros.hpp>
 #include <tf/transform_datatypes.h>
 #include <urdf/urdfdom_compatibility.h>
 #include <urdf_parser/urdf_parser.h>
@@ -301,8 +302,6 @@ namespace diff_drive_controller{
                           << ", left wheel radius "  << lwr
                           << ", right wheel radius " << rwr);
 
-    setOdomPubFields(root_nh, controller_nh);
-
     if (publish_cmd_)
     {
       cmd_vel_pub_.reset(new realtime_tools::RealtimePublisher<geometry_msgs::TwistStamped>(controller_nh, "cmd_vel_out", 100));
@@ -341,6 +340,8 @@ namespace diff_drive_controller{
       vel_left_previous_.resize(wheel_joints_size_, 0.0);
       vel_right_previous_.resize(wheel_joints_size_, 0.0);
     }
+
+    setOdomPubFields(root_nh, controller_nh);
 
     // Get the joint object to use in the realtime loop
     for (size_t i = 0; i < wheel_joints_size_; ++i)
@@ -540,7 +541,7 @@ namespace diff_drive_controller{
         return;
       }
 
-      if(!std::isfinite(command.angular.z) || !std::isfinite(command.angular.x))
+      if(!std::isfinite(command.angular.z) || !std::isfinite(command.linear.x))
       {
         ROS_WARN_THROTTLE(1.0, "Received NaN in velocity command. Ignoring.");
         return;
@@ -642,23 +643,23 @@ namespace diff_drive_controller{
     urdf::JointConstSharedPtr left_wheel_joint(model->getJoint(left_wheel_name));
     urdf::JointConstSharedPtr right_wheel_joint(model->getJoint(right_wheel_name));
 
+    if (!left_wheel_joint)
+    {
+      ROS_ERROR_STREAM_NAMED(name_, left_wheel_name
+                             << " couldn't be retrieved from model description");
+      return false;
+    }
+
+    if (!right_wheel_joint)
+    {
+      ROS_ERROR_STREAM_NAMED(name_, right_wheel_name
+                             << " couldn't be retrieved from model description");
+      return false;
+    }
+
     if (lookup_wheel_separation)
     {
       // Get wheel separation
-      if (!left_wheel_joint)
-      {
-        ROS_ERROR_STREAM_NAMED(name_, left_wheel_name
-                               << " couldn't be retrieved from model description");
-        return false;
-      }
-
-      if (!right_wheel_joint)
-      {
-        ROS_ERROR_STREAM_NAMED(name_, right_wheel_name
-                               << " couldn't be retrieved from model description");
-        return false;
-      }
-
       ROS_INFO_STREAM("left wheel to origin: " << left_wheel_joint->parent_to_joint_origin_transform.position.x << ","
                       << left_wheel_joint->parent_to_joint_origin_transform.position.y << ", "
                       << left_wheel_joint->parent_to_joint_origin_transform.position.z);
@@ -832,3 +833,5 @@ namespace diff_drive_controller{
   }
 
 } // namespace diff_drive_controller
+
+PLUGINLIB_EXPORT_CLASS(diff_drive_controller::DiffDriveController, controller_interface::ControllerBase);

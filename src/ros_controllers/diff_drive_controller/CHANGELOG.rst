@@ -2,6 +2,22 @@
 Changelog for package diff_drive_controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.18.1 (2020-12-03)
+-------------------
+* Fix null pointer checks in diff_drive_controller
+* Use version-agnostic FindBoost for headers
+* Contributors: David V. Lu, Matt Reynolds
+
+0.18.0 (2020-10-11)
+-------------------
+* Fix dependency on Boost
+* Apply consistent format to CMakeLists.txt
+* Update package.xml to format 3
+* Clean dependencies of diff_drive_controller package
+* Apply waitForController method to all diff_drive_controller tests
+* Move odom_pub setup to the end to allow consistent isControllerAlive check
+* Contributors: Mateus Amarante
+
 0.17.0 (2020-05-12)
 -------------------
 

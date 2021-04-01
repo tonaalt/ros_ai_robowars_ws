@@ -2,6 +2,18 @@
 Changelog for package rqt_joint_trajectory_controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.18.1 (2020-12-03)
+-------------------
+* Fix dependency on rospkg
+* Format package.xml and CMakeLists.txt files + clean deps of rqt_joint_trajectory_controller pkg
+* Contributors: Mateus Amarante Araújo
+
+0.18.0 (2020-10-11)
+-------------------
+* Use Python3 explicitly
+* fix shebang line for python3
+* Contributors: Bence Magyar, Mikael Arguedas
+
 0.17.0 (2020-05-12)
 -------------------
 

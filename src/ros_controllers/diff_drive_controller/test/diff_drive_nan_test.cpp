@@ -35,9 +35,8 @@
 // TEST CASES
 TEST_F(DiffDriveControllerTest, testNaN) {
   // wait for ROS
-  while (!isControllerAlive()) {
-    ros::Duration(0.1).sleep();
-  }
+  waitForController();
+
   // zero everything before test
   geometry_msgs::Twist cmd_vel;
   cmd_vel.linear.x = 0.0;
@@ -92,6 +91,16 @@ TEST_F(DiffDriveControllerTest, testNaNCmd) {
   for (int i = 0; i < 10; ++i) {
     geometry_msgs::Twist cmd_vel;
     cmd_vel.linear.x = NAN;
+    cmd_vel.angular.z = 0.0;
+    publish(cmd_vel);
+    geometry_msgs::TwistStamped odom_msg = getLastCmdVelOut();
+    EXPECT_FALSE(std::isnan(odom_msg.twist.linear.x));
+    EXPECT_FALSE(std::isnan(odom_msg.twist.angular.z));
+    ros::Duration(0.1).sleep();
+  }
+  for (int i = 0; i < 10; ++i) {
+    geometry_msgs::Twist cmd_vel;
+    cmd_vel.linear.x = 0.0;
     cmd_vel.angular.z = NAN;
     publish(cmd_vel);
     geometry_msgs::TwistStamped odom_msg = getLastCmdVelOut();
