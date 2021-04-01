@@ -2,6 +2,15 @@
 Changelog for package ros_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.19.4 (2020-12-05)
+-------------------
+
+0.19.3 (2020-10-11)
+-------------------
+
+0.19.2 (2020-08-17)
+-------------------
+
 0.19.1 (2020-05-10)
 -------------------
 * Use setuptools instead of distutils (`#429 <https://github.com/ros-controls/ros_control/issues/429>`_)

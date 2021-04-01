@@ -2,6 +2,21 @@
 Changelog for package transmission_interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.19.4 (2020-12-05)
+-------------------
+
+0.19.3 (2020-10-11)
+-------------------
+* Fix jnt-to-act command propagation check in transmission_interface_loader_test (`#473 <https://github.com/ros-controls/ros_control/issues/473>`_)
+  * Fix jnt-to-act command propagation check
+  * Fix jnt-to-act command propagation check of bidirectional transmissions
+* Remove ParseStatus enum (`#470 <https://github.com/ros-controls/ros_control/issues/470>`_)
+* Remove irrelevant test case (resolve `#460 <https://github.com/ros-controls/ros_control/issues/460>`_) (`#472 <https://github.com/ros-controls/ros_control/issues/472>`_)
+* Contributors: Mateus Amarante, Jordan Lack
+
+0.19.2 (2020-08-17)
+-------------------
+
 0.19.1 (2020-05-10)
 -------------------
 * Function specifiers noetic (`#453 <https://github.com/ros-controls/ros_control/issues/453>`_)
