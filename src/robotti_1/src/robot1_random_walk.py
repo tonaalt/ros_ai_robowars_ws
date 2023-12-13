@@ -10,21 +10,28 @@ def callback(data):
     position_x = data.pose.pose.position.x
     position_y = data.pose.pose.position.y
     if position_x < 0.5:
-        velocity_l = -10
-        velocity_r = -3
+        velocity_l = 1000
+        velocity_r = 2000
+        #-10
+        #-3
 
     elif position_y < 0.5:
-        velocity_l = -10
-        velocity_r = -3
+        velocity_l = 1000
+        velocity_r = 2000
+        #-10
+        #-3
 
     elif position_x > 2.5:
-        velocity_l = -3
-        velocity_r = -10
-    
-    elif position_y > 2.5:
-        velocity_l = -3
-        velocity_r = -10
+        velocity_l = 333
+        velocity_r = 1000
+        #-3
+        #-10
 
+    elif position_y > 2.5:
+        velocity_l = 333
+        velocity_r = 1000
+        #-3
+        #-10
     else:
         velocity_l = random.uniform(-0.1, -10)
         velocity_r = random.uniform(-0.1, -10)
